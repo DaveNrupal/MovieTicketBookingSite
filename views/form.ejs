@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking Form</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- <script type="text/javascript" src="js/form.js"></script> -->
+</head>
+<body>
+    <header>
+        <h1>Movie Booking Form</h1>
+    </header>
+    <main>
+        <form name="myForm" method="POST" onsubmit="return formSubmit();">
+            <label>Name</label>
+            <input type="text" id="name" placeholder="Please enter your Full name" name="name" required>
+
+            <label>Email</label>
+            <input type="email" id="email" placeholder="email@email.com" name="email" required>
+
+            <label>Contact Number</label>
+            <input type="text" id="number" placeholder="1231231234" name="number" required>
+
+            <label>Credit Card Number</label>
+            <input type="text" id="card" placeholder="XXXX-XXXX-XXXX-XXXX" name="card" required>
+
+            <label>Select Movie:</label>
+            <select id="movie" name="movie">
+                <option value="Singham Again">Singham Again - 6:00 PM</option>
+                <option value="Bhool bhulaiya">Bhool bhulaiya - 7:30 PM</option>
+                <option value="Stree 2">Stree 2 - 8:00 PM</option>
+                <option value="Golmal Again">Golmal Again - 9:00 PM</option>
+                <option value="3 Idiots">3 Idiots - 10:00 PM</option>
+            </select>
+
+            <label>Select Seat:</label>
+            <input type="text" id="seat" placeholder="Enter seat you want to book" name="seat">
+
+            <center><button>Submit</button></center>
+            <% 
+            if(errors && errors.length > 0) {
+            %>  
+            <p id="error">                
+                <% errors.forEach(function(error) { %>
+                    <%= error %> <br>
+                <% }); %>
+        </p>
+            <% 
+            }
+            %>
+        </form>
+        
+            <%
+            if(customer && Object.keys(customer).length > 0){
+        %>
+        <div class="details">
+            <h2>Please Confirm your details:</h2>
+            <center>
+            <table>
+                <tr>
+                    <td>Name: </td>
+                    <td><%= customer.name %></td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td><%= customer.email %></td>
+                </tr>
+                <tr>
+                    <td>Contact Number: </td>
+                    <td>******<%= customer.number %></td>
+                </tr>
+                <tr>
+                    <td>Card Number: </td>
+                    <td>****-****-****-<%= customer.card %></td>
+                </tr>
+                <tr>
+                    <td>Movie: </td>
+                    <td><%= customer.movie %></td>
+                </tr>
+                <tr>
+                    <td>Seat: </td>
+                    <td><%= customer.seat %></td>
+                </tr>
+                <tr>
+                    <td>Service Charge: </td>
+                    <td><%= customer.serviceCharge %></td>
+                </tr>
+                <tr>
+                    <td>Total: </td>
+                    <td><%= customer.totalCost %></td>
+                </tr>
+            </table>
+        </center>
+        </div>
+            <%
+      }
+    %>
+    </main>
+</body>
+</html>

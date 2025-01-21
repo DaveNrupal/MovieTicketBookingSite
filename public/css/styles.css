@@ -1,0 +1,76 @@
+body {
+    padding: 10px;
+    background-color: rgb(224, 220, 220);
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    padding: 10px;
+    margin: 10px;
+}
+
+form {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: 95%;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+input:hover {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+select:hover {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+button {
+    width: 20%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+
+.details {
+    padding: 10px;
+    margin: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: center;
+    font-size: medium;
+}
+
+table, td, th {
+    padding: 5px;
+    margin: 5px;
+}
+
+#error {
+    color: red;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    font-size: medium;
+}
